@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/blandialcani/ngx-material-dual-listbox.svg?branch=develop)](https://travis-ci.org/blandialcani/ngx-material-dual-listbox)
+
 # NgxMaterialDualListbox
 
 Simple dual list box component to use with your Angular 5 app, along with Angular Material and Flex layout.
