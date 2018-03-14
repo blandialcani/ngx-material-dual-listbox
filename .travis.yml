@@ -11,10 +11,10 @@ branches:
 jobs:
   include:
     - stage: test
-    before_script: - npm install -g @angular/cli
-    script: - ng test
+      before_script: npm install -g @angular/cli
+      script: ng test
     - stage: build
-    script: - ng-packagr -p ng-package.json
+      script: ng-packagr -p ng-package.json
 
 notifications:
   email:
