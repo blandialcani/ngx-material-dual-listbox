@@ -1,0 +1,23 @@
+#.travis.yml
+
+language: node_js
+node_js:
+  - "6.9"
+
+branches:
+  only:
+    - develop
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng-packagr -p ng-package.json
+
+after_success:
+  -
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change
