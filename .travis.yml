@@ -11,8 +11,12 @@ branches:
 before_script:
   - npm install -g @angular/cli
 
-script:
-  - ng-packagr -p ng-package.json
+jobs:
+  include:
+    - stage: test
+    script: - ng test
+    - stage: build
+    script: - ng-packagr -p ng-package.json
 
 after_success:
   -
