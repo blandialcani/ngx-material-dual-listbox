@@ -1,0 +1,49 @@
+<div  *ngIf="showFilter" fxLayout="row"
+     fxLayoutAlign="stretch space-between">
+  <mat-form-field
+    fxFlex.gt-sm="50%"
+    fxFlex.gt-xs="50%"
+    fxFlex="100">
+    <input
+      matInput name="filter"
+      [ngModel]="filterText" autocomplete="off"
+      (ngModelChange)="filterItems($event)"
+      placeholder="{{filterPlaceholder}}">
+  </mat-form-field>
+  <mat-form-field
+    fxFlex.gt-sm="50%"
+    fxFlex.gt-xs="50%"
+    fxFlex="100">
+    <input
+      matInput name="filter"
+      [ngModel]="filterSelectedText" autocomplete="off"
+      (ngModelChange)="filterSelectedItems($event)"
+      placeholder="{{filterPlaceholder}}">
+  </mat-form-field>
+</div>
+<div
+  fxLayout="row"
+  fxLayoutAlign="stretch space-between">
+  <mat-nav-list
+    fxFlex.gt-sm="50%"
+    fxFlex.gt-xs="50%"
+    fxFlex="100"
+    [style.height]="height"
+    style="overflow-y: auto">
+    <a mat-list-item *ngFor="let item of itemsFiltered" (click)="addItem(item)">
+      <mat-icon *ngIf="showIcons" [style.color]="addIconColor" fxHide.xs mat-list-icon>{{addIcon}}</mat-icon>
+      <span matLine [style.color]="textColor">{{ item[descProperty] }}</span>
+    </a>
+  </mat-nav-list>
+  <mat-nav-list
+    fxFlex.gt-sm="50%"
+    fxFlex.gt-xs="50%"
+    fxFlex="100"
+    [style.height]="height"
+    style="overflow-y: auto">
+    <a mat-list-item *ngFor="let item of selectedItemsFiltered" (click)="removeItem(item)">
+      <mat-icon *ngIf="showIcons" [style.color]="removeIconColor" fxHide.xs mat-list-icon>{{removeIcon}}</mat-icon>
+      <span matLine [style.color]="textColor">{{ item[descProperty] }}</span>
+    </a>
+  </mat-nav-list>
+</div>
