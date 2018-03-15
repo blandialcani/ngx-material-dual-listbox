@@ -16,6 +16,21 @@ export class AppComponent {
     {
       id: 2,
       description: 'second'
+    },
+
+    {
+      id: 3,
+      description: 'third'
+    },
+
+    {
+      id: 4,
+      description: 'fourth'
+    },
+
+    {
+      id: 5,
+      description: 'fifth'
     }
   ];
 }
