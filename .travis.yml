@@ -20,7 +20,7 @@ jobs:
         - "sudo chown root /opt/google/chrome/chrome-sandbox"
         - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
         - npm install -g @angular/cli
-      script: ng test
+      script: ng test --single-run
     - stage: build
       before_script: npm install -g @angular/cli
       script: ng-packagr -p ng-package.json
