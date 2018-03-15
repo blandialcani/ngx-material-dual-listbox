@@ -14,7 +14,10 @@ node_js:
 jobs:
   include:
     - stage: test
-      before_script: npm install -g @angular/cli
+      before_script:
+        - "sudo chown root /opt/google/chrome/chrome-sandbox"
+        - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+        - npm install -g @angular/cli
       script: ng test
     - stage: build
       before_script: npm install -g @angular/cli
