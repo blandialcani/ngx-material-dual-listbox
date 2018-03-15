@@ -1,15 +1,17 @@
 {
   "name": "@blandium/ngx-material-dual-listbox",
-  "version": "0.0.1",
+  "version": "0.1.1-alpha",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
+    "build-demo": "ng build --prod --output-path=docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-  "packagr": "ng-packagr -p ng-package.json"
+    "packagr": "ng-packagr -p ng-package.json",
+    "publishs": "npm publish ./dist --access=public"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
