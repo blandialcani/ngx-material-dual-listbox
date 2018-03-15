@@ -11,6 +11,10 @@ before_install:
 node_js:
   - "6.9"
 
+branches:
+  only:
+    - develop
+
 jobs:
   include:
     - stage: test
