@@ -3,6 +3,8 @@
 # NgxMaterialDualListbox
 
 Simple dual list box component to use with your Angular 5 app, along with Angular Material and Flex layout.
+ 
+## [Demo](https://blandialcani.github.io/ngx-material-dual-listbox/docs/)
 
 ## Dependencies
 
