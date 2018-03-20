@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  selectedItems: any[] = [];
   items = [
     {
       id: 1,
@@ -33,4 +34,7 @@ export class AppComponent {
       description: 'fifth'
     }
   ];
+  public itemAdded = (item) => console.log('Item added: ', item);
+
+  public itemRemoved = (item) => console.log('Item removed: ', item);
 }
