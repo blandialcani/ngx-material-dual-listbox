@@ -20,6 +20,7 @@ export class NgxMaterialDuallistboxComponent implements OnInit {
 
   @Input() items: any [] = [];
   @Input() selectedItems: any [] = [];
+  @Output() selectedItemsChange = new EventEmitter<any>();
 
   @Input() descProperty: string = 'description';
   @Input() idProperty: string = 'id';
@@ -65,6 +66,7 @@ export class NgxMaterialDuallistboxComponent implements OnInit {
   removeItem(item) {
     this.itemRemoved.emit(item);
     this.selectedItems = this.selectedItems.filter(i => item.id != i.id);
+    this.selectedItemsChange.emit(this.selectedItems);
     this.update();
   }
 
