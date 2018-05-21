@@ -69,6 +69,7 @@ export class NgxMaterialDuallistboxComponent implements OnInit {
   addItem(item) {
     this.itemAdded.emit(item);
     this.selectedItems.push(item);
+    this.selectedItemsChange.emit(this.selectedItems);
     this.update();
   }
 
