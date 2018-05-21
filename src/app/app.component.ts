@@ -37,4 +37,30 @@ export class AppComponent {
   public itemAdded = (item) => console.log('Item added: ', item);
 
   public itemRemoved = (item) => console.log('Item removed: ', item);
+  public changeList = () => this.items = [
+    {
+      id: 1,
+      description: 'changedfirst'
+    },
+
+    {
+      id: 2,
+      description: 'changedsecond'
+    },
+
+    {
+      id: 3,
+      description: 'changedthird'
+    },
+
+    {
+      id: 4,
+      description: 'changedfourth'
+    },
+
+    {
+      id: 5,
+      description: 'changedfifth'
+    }
+  ];
 }

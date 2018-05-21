@@ -19,6 +19,7 @@
   </li>
 </ul>
 
+<button mat-button (click)="changeList()">Reset input items</button>
 <ngx-material-duallistbox
   [items]="items"
   [(selectedItems)]="selectedItems"
@@ -28,7 +29,6 @@
   [descProperty]="'description'"
   [idProperty]="'id'">
 </ngx-material-duallistbox>
-
 <div style="width:50%;float:left">
   <h2>Items</h2>
   <div style="padding:1em">{{items | json}}</div>

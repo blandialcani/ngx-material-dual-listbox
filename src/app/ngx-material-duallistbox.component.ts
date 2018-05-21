@@ -18,7 +18,15 @@ export class NgxMaterialDuallistboxComponent implements OnInit {
   public filterText: string;
   public filterSelectedText: string;
 
-  @Input() items: any [] = [];
+  private _items: any [] = [];
+  @Input()
+  set items(items: any[]) {
+    this._items = items;
+    this.fullList = this._items;
+    this.selectedItems = [];
+    this.update();
+  }
+  get items(): any[] { return this._items; };
   @Input() selectedItems: any [] = [];
   @Output() selectedItemsChange = new EventEmitter<any>();
 
@@ -34,11 +42,12 @@ export class NgxMaterialDuallistboxComponent implements OnInit {
   @Input() textColor: string = 'black';
   @Input() showIcons: boolean = true;
 
+
   constructor() {
   }
 
   ngOnInit() {
-    this.fullList = this.items;
+    this.fullList = this._items;
     this.update();
   }
 
@@ -48,7 +57,7 @@ export class NgxMaterialDuallistboxComponent implements OnInit {
   }
 
   updateItems() {
-    this.items = _.differenceBy(this.fullList, this.selectedItems, this.idProperty);
+    this._items = _.differenceBy(this.fullList, this.selectedItems, this.idProperty);
     this.filterItems(this.filterText);
   }
 
@@ -73,10 +82,10 @@ export class NgxMaterialDuallistboxComponent implements OnInit {
   filterItems(text: string){
     this.filterText = text;
     if(!text || !text.replace(" ", "")){
-      this.itemsFiltered = this.items;
+      this.itemsFiltered = this._items;
       return;
     }
-    this.itemsFiltered = this.items
+    this.itemsFiltered = this._items
       .filter(item => item[this.descProperty].toLowerCase().includes(text.toLowerCase()));
   }
 
